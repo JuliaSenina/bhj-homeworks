@@ -3,8 +3,8 @@ const countDown = function() {
   timer.textContent--;
 
   if (timer.textContent === "0") {
-    clearInterval(interval);
+    clearInterval(intervalId);
     alert ("Вы победили в конкурсе!");
   };
 };
-const interval = setInterval(countDown, 1000);
+const intervalId = setInterval(countDown, 1000);
