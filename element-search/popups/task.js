@@ -5,8 +5,8 @@ const showSuccess = document.querySelector(".show-success");
 
 for (let i = 0; i < modalClose.length; i++) {
     modalClose[i].onclick = function() {
-      modalMain.style.display = "none";
-      modalSuccess.style.display = "none";
+      modalMain.className = "modal";
+      modalSuccess.className = "modal";
     };
 };
 
