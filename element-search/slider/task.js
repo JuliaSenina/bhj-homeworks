@@ -2,21 +2,42 @@ const sliderItem = Array.from(document.querySelectorAll(".slider__item"));
 const sliderArrowPrev = document.querySelector(".slider__arrow_prev");
 const sliderArrowNext = document.querySelector(".slider__arrow_next");
 
-for (let i = 0; i < sliderItem.length; i++) {
-  const index = sliderItem.findIndex(() => {
-   if (sliderItem[i].className.includes("slider__item_active")) {
-      sliderItem[i].className = "slider__item";
+function sliderDeactive (index) {
+  if (index === true) {
+    sliderItem[index].className = "slider__item";
+  };
+};
+
+sliderArrowNext.onclick = function() {
+  let index = sliderItem.findIndex((id) => {
+    if (id.className.includes("slider__item_active")) {
+      return id;
     };
-  })
+  });
 
-  sliderArrowNext.onclick = function() {
-  const indexNext = index > sliderItem.length - 1 ? i++ : 0;
-  sliderItem[indexNext].className = "slider__item slider__item_active";
-  }
+  sliderDeactive;
 
+  index = index + 1;
+  if (index > (sliderItem.length - 1)) {
+    index = 0;
+  };
+
+  sliderItem[index].className = "slider__item slider__item_active";
+};
 
 sliderArrowPrev.onclick = function() {
-  const indexPrev = index <= 0 ? i-- : i = sliderItem.length;
-  sliderItem[indexPrev].className = "slider__item slider__item_active";
+  let index = sliderItem.findIndex((id) => {
+    if (id.className.includes("slider__item_active")) {
+      return id;
+    };
+  });
+
+  sliderDeactive;
+
+  index = index --;
+  if (index <= 0) {
+    index = sliderItem.length - 1;
+  };
+
+  sliderItem[index].className = "slider__item slider__item_active";
 }
-};

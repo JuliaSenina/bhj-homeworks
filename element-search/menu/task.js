@@ -1,12 +1,10 @@
-const menuLink = Array.from(document.querySelectorAll(".menu__link"));
+//const menuLink = document.querySelectorAll(".menu__link");
+const menuItem = Array.from(document.querySelectorAll(".menu__item"));
+const menuSub = document.querySelectorAll(".menu_sub");
 
-
-for (let i = 0; i < menuLink.length; i++) {
-  const menuSub = menuLink[i].closest(".menu_sub");
-  const link = menuLink[i].querySelectorAll("a");
-  
-  menuLink[i].onclick = function() {
-    if(menuSub && link != null) {
+for (let i = 0; i < menuItem.length; i++) {
+  menuItem[i].onclick = function() {
+    if(menuItem > menuSub) {
       menuSub.className = "menu menu_sub menu_active";
       console.log(menuSub.className);
     if(menuSub.className = "menu menu_sub menu_active") {
