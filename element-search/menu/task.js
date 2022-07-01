@@ -2,20 +2,19 @@ const menuSub = Array.from(document.querySelectorAll(".menu_sub"));
 
 for (let i = 0; i < menuSub.length; i++) {
   const menuItem = menuSub[i].closest(".menu__item");
-  const menuLink = menuItem.querySelectorAll(".menu__link");
+  const menuLink = Array.from(menuItem.querySelectorAll(".menu__link"));
 
-  menuItem.onclick = function() {
-    if(menuSub[i] && menuLink != null) {
-      menuSub[i].className = "menu menu_sub menu_active";
-      console.log(menuSub[i].className);
-      let menuActive = menuItem.querySelector("ul").className.includes("menu_active");
-      console.log(menuActive);
+  menuLink[i].onclick = function() {
+    menuSub[i].className = "menu menu_sub menu_active";
+    
+    const menuActive = document.querySelector(".menu_active");
+    console.log(menuActive);
       if (menuActive === true) {
-        menuItem.onclick = function() {
-        menuSub[i].className = "menu menu_sub";
+        menuActive.className = "menu menu_sub"; 
       };
-    };
-      return false;
-    };
+
+      if (menuActive === menuSub[i]) {
+        return false;
+      };
   };
 };
