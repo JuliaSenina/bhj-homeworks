@@ -12,6 +12,8 @@ for (let i = 0; i < menuSub.length; i++) {
 
       if (menuActive !== menuSub[i]) {
         menuSub[i].className = "menu menu_sub menu_active";
-      };      
+      };
+
+    return false;
   };
 };
