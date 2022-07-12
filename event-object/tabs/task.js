@@ -6,7 +6,7 @@ for (let i = 0; i < tab.length; i++) {
     tab[i].className = "tab tab_active";
     const tabActive = document.querySelector(".tab_active");
       if (tabActive) {
-        tabActive.className("tab");
+        tabActive.className = "tab";
       };
 
     let idTab = tab.indexOf(tab[i]);
