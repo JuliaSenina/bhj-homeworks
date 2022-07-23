@@ -28,18 +28,13 @@ form.addEventListener("keyup", (e) => {
     message.forEach(function(idx) {
       if (idx.classList.contains("message_client")) {
         idx.children[0].textContent = time;
-        idx.children[1].textContent = form.value;  
+        idx.children[1].textContent = form.value;
       } else {
         idx.children[0].textContent = time;
         const randomRobotMessage = Math.floor(Math.random() * robotMessages.length);
         idx.children[1].textContent = robotMessages[randomRobotMessage];
       };
     });
+    form.value = "";
   };
 });
-
-/*form.addEventListener("submit", event => {
-    event.preventDefault();
-    const clearForm = event.currentTarget;
-    clearForm.reset();
-});*/
