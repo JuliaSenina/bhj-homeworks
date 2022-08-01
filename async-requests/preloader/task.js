@@ -2,7 +2,7 @@ const items = document.getElementById("items");
 const loaderActive = document.querySelector(".loader_active");
 
 const xhr = new XMLHttpRequest();
-xhr.addEventListener("readystatechange", () => {
+xhr.addEventListener("load", () => {
   if (xhr.readyState === xhr.DONE || xhr.status === 200) {
     object = JSON.parse(xhr.responseText);
     objectValute = object.response.Valute;

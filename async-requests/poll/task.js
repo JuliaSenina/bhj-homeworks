@@ -5,7 +5,7 @@ xhr.send();
 const pollTitle = document.getElementById("poll__title");
 const pollAnswers = document.getElementById("poll__answers");
 
-xhr.addEventListener("readystatechange", function() {
+xhr.addEventListener("load", function() {
   if (xhr.readyState === xhr.DONE) {
     const response = JSON.parse(xhr.responseText).data;
     const responseAnswers = response.answers;
