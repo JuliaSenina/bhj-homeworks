@@ -28,7 +28,7 @@ addEventListener("click", (e) => {
     
     if (productCart) {
       const cartProductCount = productCart.querySelector(".cart__product-count");
-      cartProductCount.innerText = parseInt(productValue) + parseInt(productCount.innerText);
+      cartProductCount.innerText = parseInt(productValue) + parseInt(cartProductCount.innerText);
     } else {
       cartProducts.insertAdjacentHTML("beforeend", imageCartProduct(productImage, productValue, productId));
     };

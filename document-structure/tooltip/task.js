@@ -4,14 +4,7 @@ hasTooltip.forEach(function(item) {
     
   item.onclick = function() {
     const rect = item.getBoundingClientRect();
-    const tooltips = document.querySelectorAll(".tooltip");
-
-      tooltips.forEach(function (elem) {
-        if (elem.classList.contains("tooltip_active")) {
-          elem.classList.remove("tooltip_active");
-          return false;
-        };
-      });
+    const tooltips = document.querySelector(".tooltip");
 
     if (item.nextElementSibling === null || item.nextElementSibling.classList.contains("tooltip") === false) {
 
@@ -26,5 +19,10 @@ hasTooltip.forEach(function(item) {
       tooltip.style.left = (String(rect.left) + "px");
       return false;
     };
+
+    if (tooltips.classList.contains("tooltip_active")) {
+      tooltips.classList.remove("tooltip_active");
+      return false;
+    }
   };
 });
