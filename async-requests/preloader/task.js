@@ -3,7 +3,7 @@ const loaderActive = document.querySelector(".loader_active");
 
 const xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", () => {
-  if (xhr.readyState === xhr.DONE) {
+  if (xhr.readyState === xhr.DONE || xhr.status === 200) {
     object = JSON.parse(xhr.responseText);
     objectValute = object.response.Valute;
     
